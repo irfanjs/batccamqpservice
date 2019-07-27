@@ -36,7 +36,7 @@ public class BatccAmqpRestController {
 	private final Logger logger = LoggerFactory.getLogger(BatccAmqpRestController.class);
 	
 
-	@RequestMapping(value = "/{projectid}/ut/aggregate", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+	@RequestMapping(value = "/{projectid}/batcc/aggregate", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
 	public @ResponseBody String getAggregatedDataForSectionOfNightlyBuild(@PathVariable("projectid") int projectid,
 			@RequestParam("buildtype") String buildtype, @RequestParam("build") String build) throws Exception {
 		String message = String.format("aggregate" + "-" + projectid + "-" + build + "-" + buildtype);
@@ -49,7 +49,7 @@ public class BatccAmqpRestController {
 		return returned.toString();
 	}
 
-	@RequestMapping(value = "/{projectid}/ut/modulewise", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+	@RequestMapping(value = "/{projectid}/batcc/modulewise", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
 	public @ResponseBody String getModulewiseDataForSectionOfCiBuild(@PathVariable("projectid") int projectid,
 			@RequestParam("buildtype") String buildtype, @RequestParam("build") String build) throws Exception {
 
@@ -63,7 +63,7 @@ public class BatccAmqpRestController {
 		return returned.toString();
 	}
 
-	@RequestMapping(value = "/{projectid}/ut/week", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+	@RequestMapping(value = "/{projectid}/batcc/week", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
 	public @ResponseBody String getWeekDataForSectionBuild(@PathVariable("projectid") int projectid) throws Exception {
 
 		String message = String.format("week" + "-" + projectid);
@@ -76,7 +76,7 @@ public class BatccAmqpRestController {
 		return returned.toString();
 	}
 
-	@RequestMapping(value = "/{projectid}/ut/month", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+	@RequestMapping(value = "/{projectid}/batcc/month", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
 	public @ResponseBody String getMonthDataForSectionBuild(@PathVariable("projectid") int projectid) throws Exception {
 
 		String message = String.format("month" + "-" + projectid);
@@ -89,7 +89,7 @@ public class BatccAmqpRestController {
 		return returned.toString();
 	}
 
-	@RequestMapping(value = "/{projectid}/ut/custom", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+	@RequestMapping(value = "/{projectid}/batcc/custom", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
 	public @ResponseBody String getCustomDataForSectionOfNightlyBuild(@PathVariable("projectid") int projectid,
 			@RequestParam("todate") String todate, @RequestParam("fromdate") String fromdate) throws Exception {
 
@@ -150,7 +150,7 @@ public class BatccAmqpRestController {
 
 	}
 
-	@RequestMapping(value = "/{projectid}/ut/{buildnumber}", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
+	@RequestMapping(value = "/{projectid}/batcc/{buildnumber}", method = RequestMethod.GET, produces = MediaType.TEXT_HTML_VALUE)
 	public @ResponseBody String getbuildnumberwiseinfo(@PathVariable("projectid") int projectid,
 			@PathVariable("buildnumber") int buildnumber) throws Exception {
 
